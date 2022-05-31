@@ -16,5 +16,13 @@ namespace ProjetoAgenciaTI11T.View
         {
             InitializeComponent();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            if(tbxNome.Text == "" | tbxEmail.Text == "" | tbxSenha.Text == "" | pcbImagem.Image == null)
+            {
+                MessageBox.Show("Prencha todas as informações corretamentes", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

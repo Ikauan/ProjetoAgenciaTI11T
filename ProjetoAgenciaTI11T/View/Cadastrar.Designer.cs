@@ -102,6 +102,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnCadastrar.TabIndex = 9;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // pcbImagem
             // 
