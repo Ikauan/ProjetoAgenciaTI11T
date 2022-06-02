@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using ProjetoAgenciaTI11T.Model;
+using System.Windows.Forms;
 
 namespace ProjetoAgenciaTI11T.Controller
 {
@@ -18,9 +20,21 @@ namespace ProjetoAgenciaTI11T.Controller
 
             try
             {
-                cmd.Parameters.AddWithValue("@nomeFun", "");
-                cmd.Parameters.AddWithValue("@emailFun", "");
-                cmd.Parameters.AddWithValue("@senhaFun", "");
+                cmd.Parameters.AddWithValue("@nomeFun", Funcionario.NomeFun);
+                cmd.Parameters.AddWithValue("@emailFun", Funcionario.EmailFun);
+                cmd.Parameters.AddWithValue("@senhaFun", Funcionario.SenhaFun);
+
+                SqlParameter nv = cmd.Parameters.AddWithValue("@codFun", SqlDbType.Int);
+                nv.Direction = ParameterDirection.Output;
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                var respostas = MessageBox.Show("Cadastro efetivado com Sucesso, deseja efetuar um novo registro?","Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respostas == DialogResult.Yes)
+                {
+                    
+                }
             }
             catch (Exception)
             {

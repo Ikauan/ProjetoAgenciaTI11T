@@ -39,6 +39,7 @@ namespace ProjetoAgenciaTI11T.View
             this.pcbImagem = new System.Windows.Forms.PictureBox();
             this.btnBuscarImagem = new System.Windows.Forms.Button();
             this.lblCadastro = new System.Windows.Forms.Label();
+            this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,8 +92,10 @@ namespace ProjetoAgenciaTI11T.View
             // 
             this.tbxSenha.Location = new System.Drawing.Point(111, 179);
             this.tbxSenha.Name = "tbxSenha";
+            this.tbxSenha.PasswordChar = '*';
             this.tbxSenha.Size = new System.Drawing.Size(147, 23);
             this.tbxSenha.TabIndex = 5;
+            this.tbxSenha.TextChanged += new System.EventHandler(this.tbxSenha_TextChanged);
             // 
             // btnCadastrar
             // 
@@ -106,6 +109,7 @@ namespace ProjetoAgenciaTI11T.View
             // 
             // pcbImagem
             // 
+            this.pcbImagem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pcbImagem.Location = new System.Drawing.Point(554, 94);
             this.pcbImagem.Name = "pcbImagem";
             this.pcbImagem.Size = new System.Drawing.Size(105, 100);
@@ -120,6 +124,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnBuscarImagem.TabIndex = 7;
             this.btnBuscarImagem.Text = "Buscar Imagem";
             this.btnBuscarImagem.UseVisualStyleBackColor = true;
+            this.btnBuscarImagem.Click += new System.EventHandler(this.btnBuscarImagem_Click);
             // 
             // lblCadastro
             // 
@@ -150,6 +155,7 @@ namespace ProjetoAgenciaTI11T.View
             this.MaximizeBox = false;
             this.Name = "Cadastrar";
             this.Text = "Cadastrar";
+            this.Load += new System.EventHandler(this.Cadastrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -168,5 +174,6 @@ namespace ProjetoAgenciaTI11T.View
         private System.Windows.Forms.PictureBox pcbImagem;
         private System.Windows.Forms.Button btnBuscarImagem;
         private System.Windows.Forms.Label lblCadastro;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
     }
 }
