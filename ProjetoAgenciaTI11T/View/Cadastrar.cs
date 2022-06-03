@@ -80,5 +80,10 @@ namespace ProjetoAgenciaTI11T.View
         {
 
         }
+
+        private void pcbImagem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

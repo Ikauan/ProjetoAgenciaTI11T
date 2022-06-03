@@ -45,6 +45,8 @@ namespace ProjetoAgenciaTI11T.View
             this.cmbDestino = new System.Windows.Forms.ComboBox();
             this.cmbOrigem = new System.Windows.Forms.ComboBox();
             this.mtbValor = new System.Windows.Forms.MaskedTextBox();
+            this.btnImagem = new System.Windows.Forms.Button();
+            this.opfImagem = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,6 +149,7 @@ namespace ProjetoAgenciaTI11T.View
             // 
             // picImagem
             // 
+            this.picImagem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.picImagem.Location = new System.Drawing.Point(472, 46);
             this.picImagem.Name = "picImagem";
             this.picImagem.Size = new System.Drawing.Size(133, 103);
@@ -161,10 +164,15 @@ namespace ProjetoAgenciaTI11T.View
             this.btnSalvar.TabIndex = 17;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // cmbDestino
             // 
             this.cmbDestino.FormattingEnabled = true;
+            this.cmbDestino.Items.AddRange(new object[] {
+            "EUA, Nova Iorque",
+            "Canadá, Vancouver",
+            "Inglaterra, Londres"});
             this.cmbDestino.Location = new System.Drawing.Point(144, 146);
             this.cmbDestino.Name = "cmbDestino";
             this.cmbDestino.Size = new System.Drawing.Size(121, 23);
@@ -173,6 +181,10 @@ namespace ProjetoAgenciaTI11T.View
             // cmbOrigem
             // 
             this.cmbOrigem.FormattingEnabled = true;
+            this.cmbOrigem.Items.AddRange(new object[] {
+            "São Paulo",
+            "Rio de Janeiro",
+            "Belo Horizonte"});
             this.cmbOrigem.Location = new System.Drawing.Point(144, 104);
             this.cmbOrigem.Name = "cmbOrigem";
             this.cmbOrigem.Size = new System.Drawing.Size(121, 23);
@@ -185,12 +197,23 @@ namespace ProjetoAgenciaTI11T.View
             this.mtbValor.Size = new System.Drawing.Size(100, 23);
             this.mtbValor.TabIndex = 20;
             // 
+            // btnImagem
+            // 
+            this.btnImagem.Location = new System.Drawing.Point(487, 155);
+            this.btnImagem.Name = "btnImagem";
+            this.btnImagem.Size = new System.Drawing.Size(102, 23);
+            this.btnImagem.TabIndex = 21;
+            this.btnImagem.Text = "Buscar Imgaem";
+            this.btnImagem.UseVisualStyleBackColor = true;
+            this.btnImagem.Click += new System.EventHandler(this.btnImagem_Click);
+            // 
             // Pacote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnImagem);
             this.Controls.Add(this.mtbValor);
             this.Controls.Add(this.cmbOrigem);
             this.Controls.Add(this.cmbDestino);
@@ -235,5 +258,7 @@ namespace ProjetoAgenciaTI11T.View
         private System.Windows.Forms.ComboBox cmbDestino;
         private System.Windows.Forms.ComboBox cmbOrigem;
         private System.Windows.Forms.MaskedTextBox mtbValor;
+        private System.Windows.Forms.Button btnImagem;
+        private System.Windows.Forms.OpenFileDialog opfImagem;
     }
 }

@@ -12,10 +12,12 @@ namespace ProjetoAgenciaTI11T.Model
         private static int codCliFK;
         private static int codPacFK;
         private static float pagoVen;
+        private static string retorno;
 
         public static int CodVen { get => codVen; set => codVen = value; }
         public static int CodCliFK { get => codCliFK; set => codCliFK = value; }
         public static int CodPacFK { get => codPacFK; set => codPacFK = value; }
         public static float PagoVen { get => pagoVen; set => pagoVen = value; }
+        public static string Retorno { get => retorno; set => retorno = value; }
     }
 }

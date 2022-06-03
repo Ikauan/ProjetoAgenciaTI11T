@@ -13,7 +13,7 @@ namespace ProjetoAgenciaTI11T.Controller
     {
         public void cadastrarVendas()
         {
-            SqlConnection cn = new SqlConnection(conexão.conectar());
+            SqlConnection cn = new SqlConnection(conexao.conectar());
             SqlCommand cmd = new SqlCommand("pCadastrarVen", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 

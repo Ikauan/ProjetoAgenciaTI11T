@@ -12,10 +12,12 @@ namespace ProjetoAgenciaTI11T.Model
         private static string nomeFun;
         private static string emailFun;
         private static string senhaFun;
+        private static string retono;
 
         public static int CodFun { get => codFun; set => codFun = value; }
         public static string NomeFun { get => nomeFun; set => nomeFun = value; }
         public static string EmailFun { get => emailFun; set => emailFun = value; }
         public static string SenhaFun { get => senhaFun; set => senhaFun = value; }
+        public static string Retono { get => retono; set => retono = value; }
     }
 }

@@ -68,7 +68,6 @@ namespace ProjetoAgenciaTI11T.View
             this.lblEmail.Size = new System.Drawing.Size(41, 15);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "E-mail";
-            this.lblEmail.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblSenha
             // 
@@ -79,7 +78,6 @@ namespace ProjetoAgenciaTI11T.View
             this.lblSenha.Size = new System.Drawing.Size(41, 15);
             this.lblSenha.TabIndex = 3;
             this.lblSenha.Text = "Senha";
-            this.lblSenha.Click += new System.EventHandler(this.label4_Click);
             // 
             // tbxNome
             // 
@@ -110,6 +108,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnCadastrar.TabIndex = 7;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // Funcionario
             // 
@@ -128,7 +127,6 @@ namespace ProjetoAgenciaTI11T.View
             this.MaximizeBox = false;
             this.Name = "Funcionario";
             this.Text = "Sistema Agência de Viagens - Cadastro de Funcionário";
-            this.Load += new System.EventHandler(this.Funcionario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

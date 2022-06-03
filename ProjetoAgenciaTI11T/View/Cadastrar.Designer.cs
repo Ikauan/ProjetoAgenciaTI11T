@@ -115,6 +115,7 @@ namespace ProjetoAgenciaTI11T.View
             this.pcbImagem.Size = new System.Drawing.Size(105, 100);
             this.pcbImagem.TabIndex = 6;
             this.pcbImagem.TabStop = false;
+            this.pcbImagem.Click += new System.EventHandler(this.pcbImagem_Click);
             // 
             // btnBuscarImagem
             // 

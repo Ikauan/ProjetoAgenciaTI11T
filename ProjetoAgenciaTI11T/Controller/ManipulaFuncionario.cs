@@ -14,8 +14,8 @@ namespace ProjetoAgenciaTI11T.Controller
     {
         public void cadastrarFuncionario()
         {
-            SqlConnection cn = new SqlConnection(conexão.conectar());
-            SqlCommand cmd = new SqlCommand("pCadastrarFun", cn);
+            SqlConnection cn = new SqlConnection(conexao.conectar());
+            SqlCommand cmd = new SqlCommand("pCadastrarFuncionario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
@@ -24,7 +24,7 @@ namespace ProjetoAgenciaTI11T.Controller
                 cmd.Parameters.AddWithValue("@emailFun", Funcionario.EmailFun);
                 cmd.Parameters.AddWithValue("@senhaFun", Funcionario.SenhaFun);
 
-                SqlParameter nv = cmd.Parameters.AddWithValue("@codFun", SqlDbType.Int);
+                SqlParameter nv = cmd.Parameters.AddWithValue("@codigoFun", SqlDbType.Int);
                 nv.Direction = ParameterDirection.Output;
 
                 cn.Open();
@@ -33,7 +33,13 @@ namespace ProjetoAgenciaTI11T.Controller
 
                 if (respostas == DialogResult.Yes)
                 {
-                    
+                    Clientes.Retorno = "SIm";
+                    return;
+                }
+                else
+                {
+                    Clientes.Retorno = "Não";
+                    return;
                 }
             }
             catch (Exception)

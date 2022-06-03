@@ -14,7 +14,7 @@ namespace ProjetoAgenciaTI11T.Controller
     {
         public void cadastrarCliente()
         {
-            SqlConnection cn = new SqlConnection(conexão.conectar());
+            SqlConnection cn = new SqlConnection(conexao.conectar());
             SqlCommand cmd = new SqlCommand( "pCadastrarCliente" ,cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -23,9 +23,9 @@ namespace ProjetoAgenciaTI11T.Controller
                 cmd.Parameters.AddWithValue("@nomeCli", Clientes.NomeCli);
                 cmd.Parameters.AddWithValue("@emailCli", Clientes.EmailCli);
                 cmd.Parameters.AddWithValue("@senhaCli", Clientes.SenhaCli);
-                cmd.Parameters.AddWithValue("@imgCli", Clientes.ImgCli);
-
-                SqlParameter nv = cmd.Parameters.AddWithValue("@codCli", SqlDbType.Int);
+                cmd.Parameters.AddWithValue("@imagemCli", Clientes.ImgCli);
+                
+                SqlParameter nv = cmd.Parameters.AddWithValue("@codigoCli", SqlDbType.Int);
                 nv.Direction = ParameterDirection.Output;
 
                 cn.Open();
