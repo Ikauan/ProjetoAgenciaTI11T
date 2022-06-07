@@ -47,11 +47,134 @@ namespace ProjetoAgenciaTI11T.Controller
                     return;
                 }
             }
-            catch (Exception)
+            catch
             {
 
-                throw;
             }
+        }
+
+        public void pesquisarCodigoPacotes()
+        {
+            SqlConnection cn = new SqlConnection(conexao.conectar());
+            SqlCommand cmd = new SqlCommand("", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cmd.Parameters.AddWithValue("", Funcionario.CodFun);
+                cn.Open();
+
+                var arrayDados = cmd.ExecuteReader();
+
+                if (arrayDados.Read())
+                {
+                    Pacotes.CodPac = Convert.ToInt32(arrayDados[""]);
+                    Pacotes.ValorPac = Convert.ToDecimal(arrayDados[""]);
+                    Pacotes.OrigemPac = arrayDados[""].ToString();
+                    Pacotes.DestinoPac = arrayDados[""].ToString();
+                    Pacotes.DataPacIda = Convert.ToDateTime(arrayDados[""]);
+                    Pacotes.DataPacVolta = Convert.ToDateTime(arrayDados[""]);
+                    Pacotes.DescPac = arrayDados[""].ToString();
+                    Pacotes.ImgPac = (System.Array)arrayDados[""];
+                    Pacotes.Retorno = "Sim";
+                }
+                else
+                {
+                    MessageBox.Show("Código não localizado", "Atenção",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Pacotes.Retorno = "Não";
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Clientes.Retorno = "Não";
+            }
+        }
+
+        public void deletarPacote()
+        {
+            SqlConnection cn = new SqlConnection(conexao.conectar());
+            SqlCommand cmd = new SqlCommand("", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                cmd.Parameters.AddWithValue("", Pacotes.CodPac);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Cliente excluido com sucesso", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("O Pacote não pode ser exlcuido",
+                    "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if(cn.State != ConnectionState.Closed)
+                {
+                    cn.Open();
+                }
+            }
+        }
+
+        public void alterarPacote()
+        {
+            SqlConnection cn = new SqlConnection(conexao.conectar());
+            SqlCommand cmd = new SqlCommand("", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cmd.Parameters.AddWithValue("", Pacotes.CodPac);
+                cmd.Parameters.AddWithValue("", Pacotes.OrigemPac);
+                cmd.Parameters.AddWithValue("", Pacotes.DestinoPac);
+                cmd.Parameters.AddWithValue("", Pacotes.DataPacIda);
+                cmd.Parameters.AddWithValue("", Pacotes.DataPacVolta);
+                cmd.Parameters.AddWithValue("", Pacotes.DescPac);
+                cmd.Parameters.AddWithValue("", Pacotes.ImgPac);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Pacote alterado com sucesso", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("O pacote não foi alterado", "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                if(cn.State != ConnectionState.Closed)
+                {
+                    cn.Close();
+                }
+            }
+        }
+
+        public static BindingSource pesquisarNomePacote()
+        {
+            SqlConnection cn = new SqlConnection(conexao.conectar());
+            SqlCommand cmd = new SqlCommand("", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("", Pacotes);
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
+
+            DataTable table = new DataTable();
+
+            sqlData.Fill(table);
+
+            BindingSource dados = new BindingSource();
+            dados.DataSource = table;
+
+            return dados;
         }
     }
 }
