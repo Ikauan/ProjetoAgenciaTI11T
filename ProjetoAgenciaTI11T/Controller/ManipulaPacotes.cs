@@ -56,26 +56,26 @@ namespace ProjetoAgenciaTI11T.Controller
         public void pesquisarCodigoPacotes()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisarCodPac", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
             {
-                cmd.Parameters.AddWithValue("", Funcionario.CodFun);
+                cmd.Parameters.AddWithValue("@codPac", Funcionario.CodFun);
                 cn.Open();
 
                 var arrayDados = cmd.ExecuteReader();
 
                 if (arrayDados.Read())
                 {
-                    Pacotes.CodPac = Convert.ToInt32(arrayDados[""]);
-                    Pacotes.ValorPac = Convert.ToDecimal(arrayDados[""]);
-                    Pacotes.OrigemPac = arrayDados[""].ToString();
-                    Pacotes.DestinoPac = arrayDados[""].ToString();
-                    Pacotes.DataPacIda = Convert.ToDateTime(arrayDados[""]);
+                    Pacotes.CodPac = Convert.ToInt32(arrayDados["@codPac"]);
+                    Pacotes.ValorPac = Convert.ToDecimal(arrayDados["@valorPac"]);
+                    Pacotes.OrigemPac = arrayDados["@origemPac"].ToString();
+                    Pacotes.DestinoPac = arrayDados["@destinoPac"].ToString();
+                    Pacotes.DataPacIda = Convert.ToDateTime(arrayDados["@dataPacIda"]);
                     Pacotes.DataPacVolta = Convert.ToDateTime(arrayDados[""]);
-                    Pacotes.DescPac = arrayDados[""].ToString();
-                    Pacotes.ImgPac = (System.Array)arrayDados[""];
+                    Pacotes.DescPac = arrayDados["@descPac"].ToString();
+                    Pacotes.ImgPac = (System.Array)arrayDados["@imgPac"];
                     Pacotes.Retorno = "Sim";
                 }
                 else
@@ -96,11 +96,11 @@ namespace ProjetoAgenciaTI11T.Controller
         public void deletarPacote()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pDeletarPac", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {
-                cmd.Parameters.AddWithValue("", Pacotes.CodPac);
+                cmd.Parameters.AddWithValue("@codPac", Pacotes.CodPac);
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cliente excluido com sucesso", "Atenção",
@@ -123,18 +123,18 @@ namespace ProjetoAgenciaTI11T.Controller
         public void alterarPacote()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pAlterarPac", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
             {
-                cmd.Parameters.AddWithValue("", Pacotes.CodPac);
-                cmd.Parameters.AddWithValue("", Pacotes.OrigemPac);
-                cmd.Parameters.AddWithValue("", Pacotes.DestinoPac);
-                cmd.Parameters.AddWithValue("", Pacotes.DataPacIda);
-                cmd.Parameters.AddWithValue("", Pacotes.DataPacVolta);
-                cmd.Parameters.AddWithValue("", Pacotes.DescPac);
-                cmd.Parameters.AddWithValue("", Pacotes.ImgPac);
+                cmd.Parameters.AddWithValue("@codPac", Pacotes.CodPac);
+                cmd.Parameters.AddWithValue("@origemPac", Pacotes.OrigemPac);
+                cmd.Parameters.AddWithValue("@destinoPac", Pacotes.DestinoPac);
+                cmd.Parameters.AddWithValue("@dataPacIda", Pacotes.DataPacIda);
+                cmd.Parameters.AddWithValue("dataPacVolta", Pacotes.DataPacVolta);
+                cmd.Parameters.AddWithValue("@descPac", Pacotes.DescPac);
+                cmd.Parameters.AddWithValue("@imgPac", Pacotes.ImgPac);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -158,10 +158,10 @@ namespace ProjetoAgenciaTI11T.Controller
         public static BindingSource pesquisarNomePacote()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisarNomePac", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("", Pacotes);
+            cmd.Parameters.AddWithValue("@nomePac", Pacotes.ValorPac);
             cn.Open();
             cmd.ExecuteNonQuery();
 

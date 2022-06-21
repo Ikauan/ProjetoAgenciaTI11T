@@ -52,6 +52,7 @@ namespace ProjetoAgenciaTI11T.View
             this.lblNome.Size = new System.Drawing.Size(41, 15);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome";
+            this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
             // 
             // lblEmail
             // 

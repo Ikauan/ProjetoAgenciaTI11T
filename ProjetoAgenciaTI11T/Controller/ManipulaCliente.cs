@@ -51,23 +51,23 @@ namespace ProjetoAgenciaTI11T.Controller
         public void pesquisarCodigoCliente()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisaCodCliente", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
             {
-                cmd.Parameters.AddWithValue("", Clientes.CodCli);
+                cmd.Parameters.AddWithValue("@codigoCli", Clientes.CodCli);
                 cn.Open();
 
                 var arrayDados = cmd.ExecuteReader();
 
                 if (arrayDados.Read())
                 {
-                    Clientes.CodCli = Convert.ToInt32(arrayDados[""]);
-                    Clientes.NomeCli = arrayDados[""].ToString();
-                    Clientes.EmailCli = arrayDados[""].ToString();
-                    Clientes.SenhaCli = arrayDados[""].ToString();
-                    Clientes.ImgCli = (System.Array)arrayDados[""];
+                    Clientes.CodCli = Convert.ToInt32(arrayDados["codigoCli"]);
+                    Clientes.NomeCli = arrayDados["nomeCli"].ToString();
+                    Clientes.EmailCli = arrayDados["emailCli"].ToString();
+                    Clientes.SenhaCli = arrayDados["senhaCli"].ToString();
+                    Clientes.ImgCli = (System.Array)arrayDados["imgCli"];
                     Clientes.Retorno = "Sim";
                 }
                 else
@@ -84,11 +84,11 @@ namespace ProjetoAgenciaTI11T.Controller
         public void deletarCliente()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pDeletarCliente", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {
-                cmd.Parameters.AddWithValue("", Clientes.CodCli);
+                cmd.Parameters.AddWithValue("@codigoCli", Clientes.CodCli);
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cliente excluido com sucesso", "Exclução", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -109,16 +109,16 @@ namespace ProjetoAgenciaTI11T.Controller
         public void alterarCliente()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pAlterarCliente", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
             {
-                cmd.Parameters.AddWithValue("", Clientes.CodCli);
-                cmd.Parameters.AddWithValue("", Clientes.NomeCli);
-                cmd.Parameters.AddWithValue("", Clientes.EmailCli);
-                cmd.Parameters.AddWithValue("", Clientes.SenhaCli);
-                cmd.Parameters.AddWithValue("", Clientes.ImgCli);
+                cmd.Parameters.AddWithValue("@codigoCli", Clientes.CodCli);
+                cmd.Parameters.AddWithValue("@nomeCli", Clientes.NomeCli);
+                cmd.Parameters.AddWithValue("@emailCli", Clientes.EmailCli);
+                cmd.Parameters.AddWithValue("@senhaCli", Clientes.SenhaCli);
+                cmd.Parameters.AddWithValue("@imgCli", Clientes.ImgCli);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -142,10 +142,10 @@ namespace ProjetoAgenciaTI11T.Controller
         public static BindingSource pesquisarNomeCliente()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisarNomeCliente", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("", Clientes.NomeCli);
+            cmd.Parameters.AddWithValue("@nomeCliente", Clientes.NomeCli);
             cn.Open();
             cmd.ExecuteNonQuery();
 

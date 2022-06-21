@@ -51,23 +51,23 @@ namespace ProjetoAgenciaTI11T.Controller
         public void pequisarCodigoFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisarCodFun", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
 
             try
             {
-                cmd.Parameters.AddWithValue("", Funcionario.CodFun);
+                cmd.Parameters.AddWithValue("@codFun", Funcionario.CodFun);
                 cn.Open();
 
                 var arrayDados = cmd.ExecuteReader();
 
                 if (arrayDados.Read())
                 {
-                    Funcionario.CodFun = Convert.ToInt32(arrayDados[""]);
-                    Funcionario.NomeFun = arrayDados[""].ToString();
-                    Funcionario.EmailFun = arrayDados[""].ToString();
-                    Funcionario.SenhaFun = arrayDados[""].ToString();
+                    Funcionario.CodFun = Convert.ToInt32(arrayDados["@codFun"]);
+                    Funcionario.NomeFun = arrayDados["@nomeFun"].ToString();
+                    Funcionario.EmailFun = arrayDados["@emailFun"].ToString();
+                    Funcionario.SenhaFun = arrayDados["@senhaFun"].ToString();
                     Funcionario.Retono = "Sim";
                 }
                 else
@@ -87,11 +87,11 @@ namespace ProjetoAgenciaTI11T.Controller
         public void deletarFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pDeletarFun", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {
-                cmd.Parameters.AddWithValue("", Funcionario.CodFun);
+                cmd.Parameters.AddWithValue("@codFun", Funcionario.CodFun);
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Funcionario excluido com sucesso", "Atenção",
@@ -114,15 +114,15 @@ namespace ProjetoAgenciaTI11T.Controller
         public void alterarFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pAlterarFun", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
             {
-                cmd.Parameters.AddWithValue("", Funcionario.CodFun);
-                cmd.Parameters.AddWithValue("", Funcionario.NomeFun);
-                cmd.Parameters.AddWithValue("", Funcionario.EmailFun);
-                cmd.Parameters.AddWithValue("", Funcionario.SenhaFun);
+                cmd.Parameters.AddWithValue("@codFun", Funcionario.CodFun);
+                cmd.Parameters.AddWithValue("@nomeFun", Funcionario.NomeFun);
+                cmd.Parameters.AddWithValue("@emailFun", Funcionario.EmailFun);
+                cmd.Parameters.AddWithValue("@senhaFun", Funcionario.SenhaFun);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -146,10 +146,10 @@ namespace ProjetoAgenciaTI11T.Controller
         public static BindingSource pesquisarNomeFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisarNomeFun", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("", Funcionario.NomeFun);
+            cmd.Parameters.AddWithValue("@nomeFun", Funcionario.NomeFun);
             cn.Open();
             cmd.ExecuteNonQuery();
 
