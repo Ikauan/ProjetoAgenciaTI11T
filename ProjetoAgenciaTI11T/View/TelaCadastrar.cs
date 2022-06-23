@@ -13,9 +13,9 @@ using ProjetoAgenciaTI11T.Controller;
 
 namespace ProjetoAgenciaTI11T.View
 {
-    public partial class Cadastrar : Form
+    public partial class TelaCadastrar : Form
     {
-        public Cadastrar()
+        public TelaCadastrar()
         {
             InitializeComponent();
         }

@@ -12,9 +12,9 @@ using ProjetoAgenciaTI11T.Model;
 
 namespace ProjetoAgenciaTI11T.View
 {
-    public partial class Funcionario : Form
+    public partial class TelaFuncionario : Form
     {
-        public Funcionario()
+        public TelaFuncionario()
         {
             InitializeComponent();
         }

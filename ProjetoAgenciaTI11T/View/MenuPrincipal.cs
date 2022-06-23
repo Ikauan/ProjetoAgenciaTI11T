@@ -29,13 +29,13 @@ namespace ProjetoAgenciaTI11T.View
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cadastrar Cadastrar = new Cadastrar();
+            TelaCadastrar Cadastrar = new TelaCadastrar();
             Cadastrar.ShowDialog();
         }
 
         private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Funcionario Funcionario = new Funcionario();
+            TelaFuncionario Funcionario = new TelaFuncionario();
             Funcionario.ShowDialog();
         }
 

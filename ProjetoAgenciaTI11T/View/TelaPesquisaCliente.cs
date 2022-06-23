@@ -61,5 +61,15 @@ namespace ProjetoAgenciaTI11T.View
                 }
             }
         }
+
+        private void TelaPesquisaCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxCodCli_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

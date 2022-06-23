@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoAgenciaTI11T.View
 {
-    partial class Cadastrar
+    partial class TelaCadastrar
     {
         /// <summary>
         /// Required designer variable.

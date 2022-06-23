@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoAgenciaTI11T.View
 {
-    partial class Funcionario
+    partial class TelaFuncionario
     {
         /// <summary>
         /// Required designer variable.
