@@ -24,7 +24,7 @@ namespace ProjetoAgenciaTI11T.View
         {
             if (tbxCodCli.Text == "")
             {
-                MessageBox.Show("Digite um Código de Cliente","Atenção",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Digite um Código de Cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 tbxCodCli.Text = string.Empty;
                 tbxCodCli.Focus();
@@ -41,12 +41,7 @@ namespace ProjetoAgenciaTI11T.View
                 Clientes.CodCli = Convert.ToInt32(tbxCodCli.Text);
                 ManipulaCliente manipulaCliente = new ManipulaCliente();
                 manipulaCliente.pesquisarCodigoCliente();
-                tbxNome.Text = Clientes.NomeCli;
-                tbxEmail.Text = Clientes.EmailCli;
-                tbxSenha.Text = Clientes.SenhaCli;
 
-                MemoryStream ms = new MemoryStream((byte[])Clientes.ImgCli);
-                pcbImagem.Image = Image.FromStream(ms);
 
                 if (Clientes.Retorno == "Não")
                 {
@@ -59,6 +54,15 @@ namespace ProjetoAgenciaTI11T.View
                     pcbImagem.Image = null;
                     return;
                 }
+                else
+                {
+                    tbxNome.Text = Clientes.NomeCli;
+                    tbxEmail.Text = Clientes.EmailCli;
+                    tbxSenha.Text = Clientes.SenhaCli;
+
+                    MemoryStream ms = new MemoryStream((byte[])Clientes.ImgCli);
+                    pcbImagem.Image = Image.FromStream(ms);
+                }
             }
         }
 
@@ -70,6 +74,94 @@ namespace ProjetoAgenciaTI11T.View
         private void tbxCodCli_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDeletarCli_Click(object sender, EventArgs e)
+        {
+            if (tbxCodCli.Text == "")
+            {
+                MessageBox.Show("Digite um Código de Cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                tbxCodCli.Text = string.Empty;
+                tbxCodCli.Focus();
+                tbxCodCli.SelectAll();
+                tbxEmail.Text = string.Empty;
+                tbxNome.Text = string.Empty;
+                tbxSenha.Text = string.Empty;
+                tbxNome.Text = string.Empty;
+                pcbImagem.Image = null;
+
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Deseja excluir o Cliente" + tbxCodCli.Text + "?",
+                    "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    Clientes.CodCli = Convert.ToInt32(tbxCodCli.Text);
+
+                    ManipulaCliente manipulaCliente = new ManipulaCliente();
+                    manipulaCliente.deletarCliente();
+
+                    tbxCodCli.Text = string.Empty;
+                    tbxCodCli.Focus();
+                    tbxCodCli.SelectAll();
+                    tbxEmail.Text = string.Empty;
+                    tbxNome.Text = string.Empty;
+                    tbxSenha.Text = string.Empty;
+                    tbxNome.Text = string.Empty;
+                    pcbImagem.Image = null;
+                }
+            }
+        }
+
+        private void btnAlterarCli_Click(object sender, EventArgs e)
+        {
+            if (tbxCodCli.Text == "")
+            {
+                MessageBox.Show("Digite um Código de Cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                tbxCodCli.Text = string.Empty;
+                tbxCodCli.Focus();
+                tbxCodCli.SelectAll();
+                tbxEmail.Text = string.Empty;
+                tbxNome.Text = string.Empty;
+                tbxSenha.Text = string.Empty;
+                tbxNome.Text = string.Empty;
+                pcbImagem.Image = null;
+
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Deseja alterar os dados do cliente" + tbxCodCli.Text + "?",
+                    "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    Clientes.CodCli = Convert.ToInt32(tbxCodCli.Text);
+                    Clientes.NomeCli = tbxNome.Text;
+                    Clientes.EmailCli = tbxEmail.Text;
+                    Clientes.SenhaCli = tbxSenha.Text;
+
+                    MemoryStream ms = new MemoryStream();
+                    pcbImagem.Image.Save(ms, pcbImagem.Image.RawFormat);
+                    Clientes.ImgCli = ms.ToArray();
+
+                    ManipulaCliente manipulaCliente = new ManipulaCliente();
+                    manipulaCliente.alterarCliente();
+
+                }
+            }
+        }
+
+        private void btnBuscarImagem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Escolha uma imagem (*.jpg*.png*.jpeg*)" + "|*.jpg;*.png;*.jpeg;";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pcbImagem.Image = Image.FromFile(openFileDialog1.FileName);
+            }
         }
     }
 }

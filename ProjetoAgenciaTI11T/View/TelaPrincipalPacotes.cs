@@ -32,9 +32,7 @@ namespace ProjetoAgenciaTI11T.View
                 mtbValor.Text = string.Empty;
                 cmbOrigem.Text = string.Empty;
                 cmbDestino.Text = string.Empty;
-                dateIda.Text = string.Empty;
-                dateVolta.Text = string.Empty;
-                rcbDescrição.Text = string.Empty;
+                rcbDescricao.Text = string.Empty;
                 picImagem.Image = null;
 
             }
@@ -47,7 +45,7 @@ namespace ProjetoAgenciaTI11T.View
                 mtbValor.Text = Convert.ToString(Pacotes.ValorPac);
                 cmbOrigem.Text = Pacotes.OrigemPac;
                 cmbDestino.Text = Pacotes.DestinoPac;
-                rcbDescrição.Text = Pacotes.DescPac;
+                rcbDescricao.Text = Pacotes.DescPac;
 
                 MemoryStream ms = new MemoryStream((byte[])Pacotes.ImgPac);
                 picImagem.Image = Image.FromStream(ms);
@@ -60,12 +58,15 @@ namespace ProjetoAgenciaTI11T.View
                     mtbValor.Text = string.Empty;
                     cmbOrigem.Text = string.Empty;
                     cmbDestino.Text = string.Empty;
-                    dateIda.Text = string.Empty;
-                    dateVolta.Text = string.Empty;
-                    rcbDescrição.Text = string.Empty;
+                    rcbDescricao.Text = string.Empty;
                     picImagem.Image = null;
                 }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

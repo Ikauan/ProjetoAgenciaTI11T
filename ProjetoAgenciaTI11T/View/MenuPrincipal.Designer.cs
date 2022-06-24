@@ -63,7 +63,7 @@ namespace ProjetoAgenciaTI11T.View
             this.vendaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(62, 1);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(486, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(606, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -110,15 +110,16 @@ namespace ProjetoAgenciaTI11T.View
             // cadastrarToolStripMenuItem1
             // 
             this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(178, 34);
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(180, 34);
             this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarToolStripMenuItem1_Click);
             // 
             // pesquisarToolStripMenuItem1
             // 
             this.pesquisarToolStripMenuItem1.Name = "pesquisarToolStripMenuItem1";
-            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(178, 34);
+            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(180, 34);
             this.pesquisarToolStripMenuItem1.Text = "Pesquisar";
+            this.pesquisarToolStripMenuItem1.Click += new System.EventHandler(this.pesquisarToolStripMenuItem1_Click);
             // 
             // pacotesToolStripMenuItem
             // 
@@ -139,8 +140,9 @@ namespace ProjetoAgenciaTI11T.View
             // pesquisarToolStripMenuItem2
             // 
             this.pesquisarToolStripMenuItem2.Name = "pesquisarToolStripMenuItem2";
-            this.pesquisarToolStripMenuItem2.Size = new System.Drawing.Size(178, 34);
+            this.pesquisarToolStripMenuItem2.Size = new System.Drawing.Size(180, 34);
             this.pesquisarToolStripMenuItem2.Text = "Pesquisar";
+            this.pesquisarToolStripMenuItem2.Click += new System.EventHandler(this.pesquisarToolStripMenuItem2_Click);
             // 
             // vendaToolStripMenuItem
             // 

@@ -61,21 +61,19 @@ namespace ProjetoAgenciaTI11T.Controller
 
             try
             {
-                cmd.Parameters.AddWithValue("@codPac", Funcionario.CodFun);
+                cmd.Parameters.AddWithValue("@codigoPac", Pacotes.CodPac);
                 cn.Open();
 
                 var arrayDados = cmd.ExecuteReader();
 
                 if (arrayDados.Read())
                 {
-                    Pacotes.CodPac = Convert.ToInt32(arrayDados["@codPac"]);
-                    Pacotes.ValorPac = Convert.ToDecimal(arrayDados["@valorPac"]);
-                    Pacotes.OrigemPac = arrayDados["@origemPac"].ToString();
-                    Pacotes.DestinoPac = arrayDados["@destinoPac"].ToString();
-                    Pacotes.DataPacIda = Convert.ToDateTime(arrayDados["@dataPacIda"]);
-                    Pacotes.DataPacVolta = Convert.ToDateTime(arrayDados[""]);
-                    Pacotes.DescPac = arrayDados["@descPac"].ToString();
-                    Pacotes.ImgPac = (System.Array)arrayDados["@imgPac"];
+                    Pacotes.CodPac = Convert.ToInt32(arrayDados["codigoPac"]);
+                    Pacotes.ValorPac = Convert.ToDecimal(arrayDados["valorPac"]);
+                    Pacotes.OrigemPac = arrayDados["origemPac"].ToString();
+                    Pacotes.DestinoPac = arrayDados["destinoPac"].ToString();
+                    Pacotes.DescPac = arrayDados["descricaoPac"].ToString();
+                    Pacotes.ImgPac = (System.Array)arrayDados["imagemPac"];
                     Pacotes.Retorno = "Sim";
                 }
                 else
@@ -133,7 +131,7 @@ namespace ProjetoAgenciaTI11T.Controller
                 cmd.Parameters.AddWithValue("@destinoPac", Pacotes.DestinoPac);
                 cmd.Parameters.AddWithValue("@dataPacIda", Pacotes.DataPacIda);
                 cmd.Parameters.AddWithValue("dataPacVolta", Pacotes.DataPacVolta);
-                cmd.Parameters.AddWithValue("@descPac", Pacotes.DescPac);
+                cmd.Parameters.AddWithValue("@descricaoPac", Pacotes.DescPac);
                 cmd.Parameters.AddWithValue("@imgPac", Pacotes.ImgPac);
 
                 cn.Open();
@@ -158,7 +156,7 @@ namespace ProjetoAgenciaTI11T.Controller
         public static BindingSource pesquisarNomePacote()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("pPesquisarNomePac", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisarOrigemPacote", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@nomePac", Pacotes.ValorPac);

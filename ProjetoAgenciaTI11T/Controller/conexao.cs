@@ -10,7 +10,7 @@ namespace ProjetoAgenciaTI11T.Controller
     {
         public static string conectar()
         {
-            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kauan.mcardoso\source\repos\ProjetoAgenciaTI11T\ProjetoAgenciaTI11T\bdagencia.mdf;Integrated Security=True";
+            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kauan.mcardoso\source\repos\ProjetoAgenciaTI11T\ProjetoAgenciaTI11T\bdagenciaviagem.mdf;Integrated Security=True";
         }
     }
 }

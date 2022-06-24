@@ -51,23 +51,23 @@ namespace ProjetoAgenciaTI11T.Controller
         public void pequisarCodigoFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("pPesquisarCodFun", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisaCodFuncionario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
 
             try
             {
-                cmd.Parameters.AddWithValue("@codFun", Funcionario.CodFun);
+                cmd.Parameters.AddWithValue("@codigoFun", Funcionario.CodFun);
                 cn.Open();
 
                 var arrayDados = cmd.ExecuteReader();
 
                 if (arrayDados.Read())
                 {
-                    Funcionario.CodFun = Convert.ToInt32(arrayDados["@codFun"]);
-                    Funcionario.NomeFun = arrayDados["@nomeFun"].ToString();
-                    Funcionario.EmailFun = arrayDados["@emailFun"].ToString();
-                    Funcionario.SenhaFun = arrayDados["@senhaFun"].ToString();
+                    Funcionario.CodFun = Convert.ToInt32(arrayDados["codigoFun"]);
+                    Funcionario.NomeFun = arrayDados["nomeFun"].ToString();
+                    Funcionario.EmailFun = arrayDados["emailFun"].ToString();
+                    Funcionario.SenhaFun = arrayDados["senhaFun"].ToString();
                     Funcionario.Retono = "Sim";
                 }
                 else
@@ -114,12 +114,12 @@ namespace ProjetoAgenciaTI11T.Controller
         public void alterarFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("pAlterarFun", cn);
+            SqlCommand cmd = new SqlCommand("pAlterarFuncionario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
             {
-                cmd.Parameters.AddWithValue("@codFun", Funcionario.CodFun);
+                cmd.Parameters.AddWithValue("@codigoFun", Funcionario.CodFun);
                 cmd.Parameters.AddWithValue("@nomeFun", Funcionario.NomeFun);
                 cmd.Parameters.AddWithValue("@emailFun", Funcionario.EmailFun);
                 cmd.Parameters.AddWithValue("@senhaFun", Funcionario.SenhaFun);
@@ -146,7 +146,7 @@ namespace ProjetoAgenciaTI11T.Controller
         public static BindingSource pesquisarNomeFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("pPesquisarNomeFun", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisarNomeFuncionario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@nomeFun", Funcionario.NomeFun);

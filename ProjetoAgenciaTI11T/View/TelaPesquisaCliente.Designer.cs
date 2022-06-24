@@ -55,6 +55,7 @@ namespace ProjetoAgenciaTI11T.View
             this.tbxCodCli = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscaCodCli = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
@@ -191,6 +192,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnAlterarCli.TabIndex = 22;
             this.btnAlterarCli.Text = "Alterar";
             this.btnAlterarCli.UseVisualStyleBackColor = true;
+            this.btnAlterarCli.Click += new System.EventHandler(this.btnAlterarCli_Click);
             // 
             // btnDeletarCli
             // 
@@ -200,6 +202,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnDeletarCli.TabIndex = 21;
             this.btnDeletarCli.Text = "Deletar";
             this.btnDeletarCli.UseVisualStyleBackColor = true;
+            this.btnDeletarCli.Click += new System.EventHandler(this.btnDeletarCli_Click);
             // 
             // btnBuscarImagem
             // 
@@ -209,6 +212,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnBuscarImagem.TabIndex = 20;
             this.btnBuscarImagem.Text = "Buscar Imagem";
             this.btnBuscarImagem.UseVisualStyleBackColor = true;
+            this.btnBuscarImagem.Click += new System.EventHandler(this.btnBuscarImagem_Click);
             // 
             // pcbImagem
             // 
@@ -300,6 +304,10 @@ namespace ProjetoAgenciaTI11T.View
             this.btnBuscaCodCli.UseVisualStyleBackColor = true;
             this.btnBuscaCodCli.Click += new System.EventHandler(this.btnBuscaCodCli_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // TelaPesquisaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -352,5 +360,6 @@ namespace ProjetoAgenciaTI11T.View
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Foto;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

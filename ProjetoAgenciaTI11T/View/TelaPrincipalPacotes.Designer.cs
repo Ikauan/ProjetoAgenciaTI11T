@@ -44,26 +44,26 @@ namespace ProjetoAgenciaTI11T.View
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnBuscaCodPac = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbxCodPac = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mtbValor = new System.Windows.Forms.MaskedTextBox();
-            this.cmbOrigem = new System.Windows.Forms.ComboBox();
-            this.cmbDestino = new System.Windows.Forms.ComboBox();
-            this.rcbDescrição = new System.Windows.Forms.RichTextBox();
-            this.dateVolta = new System.Windows.Forms.DateTimePicker();
-            this.dateIda = new System.Windows.Forms.DateTimePicker();
-            this.lblValor = new System.Windows.Forms.Label();
-            this.lblDescrição = new System.Windows.Forms.Label();
-            this.lblDataIda = new System.Windows.Forms.Label();
-            this.lblDataVolta = new System.Windows.Forms.Label();
-            this.lblOrigem = new System.Windows.Forms.Label();
-            this.lblDestino = new System.Windows.Forms.Label();
             this.btnImagem = new System.Windows.Forms.Button();
             this.picImagem = new System.Windows.Forms.PictureBox();
+            this.mtbValor = new System.Windows.Forms.MaskedTextBox();
+            this.btnBuscaCodPac = new System.Windows.Forms.Button();
+            this.cmbOrigem = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbDestino = new System.Windows.Forms.ComboBox();
+            this.tbxCodPac = new System.Windows.Forms.TextBox();
+            this.rcbDescricao = new System.Windows.Forms.RichTextBox();
+            this.dateVolta = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dateIda = new System.Windows.Forms.DateTimePicker();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblDestino = new System.Windows.Forms.Label();
+            this.lblDescrição = new System.Windows.Forms.Label();
+            this.lblOrigem = new System.Windows.Forms.Label();
+            this.lblDataIda = new System.Windows.Forms.Label();
+            this.lblDataVolta = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -179,6 +179,7 @@ namespace ProjetoAgenciaTI11T.View
             this.button4.TabIndex = 12;
             this.button4.Text = "Pesquisar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // tabPage2
             // 
@@ -190,7 +191,7 @@ namespace ProjetoAgenciaTI11T.View
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.cmbDestino);
             this.tabPage2.Controls.Add(this.tbxCodPac);
-            this.tabPage2.Controls.Add(this.rcbDescrição);
+            this.tabPage2.Controls.Add(this.rcbDescricao);
             this.tabPage2.Controls.Add(this.dateVolta);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.dateIda);
@@ -209,6 +210,31 @@ namespace ProjetoAgenciaTI11T.View
             this.tabPage2.Text = "Pesquiar pacotes por codigo";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnImagem
+            // 
+            this.btnImagem.Location = new System.Drawing.Point(514, 182);
+            this.btnImagem.Name = "btnImagem";
+            this.btnImagem.Size = new System.Drawing.Size(102, 23);
+            this.btnImagem.TabIndex = 34;
+            this.btnImagem.Text = "Buscar Imgaem";
+            this.btnImagem.UseVisualStyleBackColor = true;
+            // 
+            // picImagem
+            // 
+            this.picImagem.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.picImagem.Location = new System.Drawing.Point(499, 73);
+            this.picImagem.Name = "picImagem";
+            this.picImagem.Size = new System.Drawing.Size(133, 103);
+            this.picImagem.TabIndex = 33;
+            this.picImagem.TabStop = false;
+            // 
+            // mtbValor
+            // 
+            this.mtbValor.Location = new System.Drawing.Point(63, 55);
+            this.mtbValor.Name = "mtbValor";
+            this.mtbValor.Size = new System.Drawing.Size(100, 23);
+            this.mtbValor.TabIndex = 32;
+            // 
             // btnBuscaCodPac
             // 
             this.btnBuscaCodPac.Location = new System.Drawing.Point(499, 22);
@@ -218,58 +244,6 @@ namespace ProjetoAgenciaTI11T.View
             this.btnBuscaCodPac.Text = "Pesquisar";
             this.btnBuscaCodPac.UseVisualStyleBackColor = true;
             this.btnBuscaCodPac.Click += new System.EventHandler(this.btnBuscaCodPac_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(9, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(191, 21);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Buscar Pacotes por código";
-            // 
-            // tbxCodPac
-            // 
-            this.tbxCodPac.Location = new System.Drawing.Point(206, 22);
-            this.tbxCodPac.Name = "tbxCodPac";
-            this.tbxCodPac.Size = new System.Drawing.Size(287, 23);
-            this.tbxCodPac.TabIndex = 20;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(428, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Deletar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Location = new System.Drawing.Point(329, 266);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(80, 30);
-            this.btnCadastrar.TabIndex = 18;
-            this.btnCadastrar.Text = "Alterar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(259, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 40);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Pesquisar Pacotes";
-            // 
-            // mtbValor
-            // 
-            this.mtbValor.Location = new System.Drawing.Point(63, 55);
-            this.mtbValor.Name = "mtbValor";
-            this.mtbValor.Size = new System.Drawing.Size(100, 23);
-            this.mtbValor.TabIndex = 32;
             // 
             // cmbOrigem
             // 
@@ -283,6 +257,16 @@ namespace ProjetoAgenciaTI11T.View
             this.cmbOrigem.Size = new System.Drawing.Size(121, 23);
             this.cmbOrigem.TabIndex = 31;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(9, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(191, 21);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Buscar Pacotes por código";
+            // 
             // cmbDestino
             // 
             this.cmbDestino.FormattingEnabled = true;
@@ -295,13 +279,20 @@ namespace ProjetoAgenciaTI11T.View
             this.cmbDestino.Size = new System.Drawing.Size(121, 23);
             this.cmbDestino.TabIndex = 30;
             // 
-            // rcbDescrição
+            // tbxCodPac
             // 
-            this.rcbDescrição.Location = new System.Drawing.Point(88, 237);
-            this.rcbDescrição.Name = "rcbDescrição";
-            this.rcbDescrição.Size = new System.Drawing.Size(208, 86);
-            this.rcbDescrição.TabIndex = 29;
-            this.rcbDescrição.Text = "";
+            this.tbxCodPac.Location = new System.Drawing.Point(206, 22);
+            this.tbxCodPac.Name = "tbxCodPac";
+            this.tbxCodPac.Size = new System.Drawing.Size(287, 23);
+            this.tbxCodPac.TabIndex = 20;
+            // 
+            // rcbDescricao
+            // 
+            this.rcbDescricao.Location = new System.Drawing.Point(88, 237);
+            this.rcbDescricao.Name = "rcbDescricao";
+            this.rcbDescricao.Size = new System.Drawing.Size(208, 86);
+            this.rcbDescricao.TabIndex = 29;
+            this.rcbDescricao.Text = "";
             // 
             // dateVolta
             // 
@@ -311,6 +302,15 @@ namespace ProjetoAgenciaTI11T.View
             this.dateVolta.Size = new System.Drawing.Size(102, 23);
             this.dateVolta.TabIndex = 28;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(428, 266);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 30);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Deletar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // dateIda
             // 
             this.dateIda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -318,6 +318,15 @@ namespace ProjetoAgenciaTI11T.View
             this.dateIda.Name = "dateIda";
             this.dateIda.Size = new System.Drawing.Size(102, 23);
             this.dateIda.TabIndex = 27;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(329, 266);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(80, 30);
+            this.btnCadastrar.TabIndex = 18;
+            this.btnCadastrar.Text = "Alterar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // lblValor
             // 
@@ -328,6 +337,15 @@ namespace ProjetoAgenciaTI11T.View
             this.lblValor.TabIndex = 26;
             this.lblValor.Text = "Valor";
             // 
+            // lblDestino
+            // 
+            this.lblDestino.AutoSize = true;
+            this.lblDestino.Location = new System.Drawing.Point(24, 136);
+            this.lblDestino.Name = "lblDestino";
+            this.lblDestino.Size = new System.Drawing.Size(47, 15);
+            this.lblDestino.TabIndex = 21;
+            this.lblDestino.Text = "Destino";
+            // 
             // lblDescrição
             // 
             this.lblDescrição.AutoSize = true;
@@ -336,6 +354,15 @@ namespace ProjetoAgenciaTI11T.View
             this.lblDescrição.Size = new System.Drawing.Size(58, 15);
             this.lblDescrição.TabIndex = 25;
             this.lblDescrição.Text = "Descrição";
+            // 
+            // lblOrigem
+            // 
+            this.lblOrigem.AutoSize = true;
+            this.lblOrigem.Location = new System.Drawing.Point(24, 94);
+            this.lblOrigem.Name = "lblOrigem";
+            this.lblOrigem.Size = new System.Drawing.Size(47, 15);
+            this.lblOrigem.TabIndex = 22;
+            this.lblOrigem.Text = "Origem";
             // 
             // lblDataIda
             // 
@@ -355,41 +382,15 @@ namespace ProjetoAgenciaTI11T.View
             this.lblDataVolta.TabIndex = 23;
             this.lblDataVolta.Text = "Data da Volta";
             // 
-            // lblOrigem
+            // label1
             // 
-            this.lblOrigem.AutoSize = true;
-            this.lblOrigem.Location = new System.Drawing.Point(24, 94);
-            this.lblOrigem.Name = "lblOrigem";
-            this.lblOrigem.Size = new System.Drawing.Size(47, 15);
-            this.lblOrigem.TabIndex = 22;
-            this.lblOrigem.Text = "Origem";
-            // 
-            // lblDestino
-            // 
-            this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(24, 136);
-            this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(47, 15);
-            this.lblDestino.TabIndex = 21;
-            this.lblDestino.Text = "Destino";
-            // 
-            // btnImagem
-            // 
-            this.btnImagem.Location = new System.Drawing.Point(514, 182);
-            this.btnImagem.Name = "btnImagem";
-            this.btnImagem.Size = new System.Drawing.Size(102, 23);
-            this.btnImagem.TabIndex = 34;
-            this.btnImagem.Text = "Buscar Imgaem";
-            this.btnImagem.UseVisualStyleBackColor = true;
-            // 
-            // picImagem
-            // 
-            this.picImagem.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.picImagem.Location = new System.Drawing.Point(499, 73);
-            this.picImagem.Name = "picImagem";
-            this.picImagem.Size = new System.Drawing.Size(133, 103);
-            this.picImagem.TabIndex = 33;
-            this.picImagem.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(259, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(241, 40);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Pesquisar Pacotes";
             // 
             // TelaPrincipalPacotes
             // 
@@ -438,7 +439,7 @@ namespace ProjetoAgenciaTI11T.View
         private System.Windows.Forms.MaskedTextBox mtbValor;
         private System.Windows.Forms.ComboBox cmbOrigem;
         private System.Windows.Forms.ComboBox cmbDestino;
-        private System.Windows.Forms.RichTextBox rcbDescrição;
+        private System.Windows.Forms.RichTextBox rcbDescricao;
         private System.Windows.Forms.DateTimePicker dateVolta;
         private System.Windows.Forms.DateTimePicker dateIda;
         private System.Windows.Forms.Label lblValor;

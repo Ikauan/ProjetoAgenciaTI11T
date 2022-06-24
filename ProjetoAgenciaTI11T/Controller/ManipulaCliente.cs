@@ -67,7 +67,7 @@ namespace ProjetoAgenciaTI11T.Controller
                     Clientes.NomeCli = arrayDados["nomeCli"].ToString();
                     Clientes.EmailCli = arrayDados["emailCli"].ToString();
                     Clientes.SenhaCli = arrayDados["senhaCli"].ToString();
-                    Clientes.ImgCli = (System.Array)arrayDados["imgCli"];
+                    Clientes.ImgCli = (System.Array)arrayDados["imagemCli"];
                     Clientes.Retorno = "Sim";
                 }
                 else
@@ -118,7 +118,7 @@ namespace ProjetoAgenciaTI11T.Controller
                 cmd.Parameters.AddWithValue("@nomeCli", Clientes.NomeCli);
                 cmd.Parameters.AddWithValue("@emailCli", Clientes.EmailCli);
                 cmd.Parameters.AddWithValue("@senhaCli", Clientes.SenhaCli);
-                cmd.Parameters.AddWithValue("@imgCli", Clientes.ImgCli);
+                cmd.Parameters.AddWithValue("@imagemCli", Clientes.ImgCli);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -145,7 +145,7 @@ namespace ProjetoAgenciaTI11T.Controller
             SqlCommand cmd = new SqlCommand("pPesquisarNomeCliente", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@nomeCliente", Clientes.NomeCli);
+            cmd.Parameters.AddWithValue("@nomeCli", Clientes.NomeCli);
             cn.Open();
             cmd.ExecuteNonQuery();
 
