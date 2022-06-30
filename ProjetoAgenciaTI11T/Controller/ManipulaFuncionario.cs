@@ -87,11 +87,11 @@ namespace ProjetoAgenciaTI11T.Controller
         public void deletarFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("pDeletarFun", cn);
+            SqlCommand cmd = new SqlCommand("pDeletarFuncionario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {
-                cmd.Parameters.AddWithValue("@codFun", Funcionario.CodFun);
+                cmd.Parameters.AddWithValue("@codigoFun", Funcionario.CodFun);
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Funcionario excluido com sucesso", "Atenção",
@@ -146,7 +146,7 @@ namespace ProjetoAgenciaTI11T.Controller
         public static BindingSource pesquisarNomeFuncionario()
         {
             SqlConnection cn = new SqlConnection(conexao.conectar());
-            SqlCommand cmd = new SqlCommand("pPesquisarNomeFuncionario", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisaNomeFuncionario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@nomeFun", Funcionario.NomeFun);

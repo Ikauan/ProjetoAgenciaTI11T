@@ -143,6 +143,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnBuscarNomeCli.TabIndex = 2;
             this.btnBuscarNomeCli.Text = "Buscar";
             this.btnBuscarNomeCli.UseVisualStyleBackColor = true;
+            this.btnBuscarNomeCli.Click += new System.EventHandler(this.btnBuscarNomeCli_Click);
             // 
             // tbxNomeCli
             // 

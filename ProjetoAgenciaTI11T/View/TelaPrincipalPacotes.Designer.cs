@@ -41,8 +41,8 @@ namespace ProjetoAgenciaTI11T.View
             this.Imagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.tbxNomePac = new System.Windows.Forms.TextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnImagem = new System.Windows.Forms.Button();
             this.picImagem = new System.Windows.Forms.PictureBox();
@@ -64,6 +64,7 @@ namespace ProjetoAgenciaTI11T.View
             this.lblDataIda = new System.Windows.Forms.Label();
             this.lblDataVolta = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -85,8 +86,8 @@ namespace ProjetoAgenciaTI11T.View
             // 
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.tbxNomePac);
+            this.tabPage1.Controls.Add(this.btnPesquisar);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -164,22 +165,22 @@ namespace ProjetoAgenciaTI11T.View
             this.label2.TabIndex = 22;
             this.label2.Text = "Buscar Pacotes por nome";
             // 
-            // textBox4
+            // tbxNomePac
             // 
-            this.textBox4.Location = new System.Drawing.Point(226, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(260, 23);
-            this.textBox4.TabIndex = 13;
+            this.tbxNomePac.Location = new System.Drawing.Point(226, 19);
+            this.tbxNomePac.Name = "tbxNomePac";
+            this.tbxNomePac.Size = new System.Drawing.Size(260, 23);
+            this.tbxNomePac.TabIndex = 13;
             // 
-            // button4
+            // btnPesquisar
             // 
-            this.button4.Location = new System.Drawing.Point(492, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Pesquisar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnPesquisar.Location = new System.Drawing.Point(492, 19);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.TabIndex = 12;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.button4_Click);
             // 
             // tabPage2
             // 
@@ -218,6 +219,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnImagem.TabIndex = 34;
             this.btnImagem.Text = "Buscar Imgaem";
             this.btnImagem.UseVisualStyleBackColor = true;
+            this.btnImagem.Click += new System.EventHandler(this.btnImagem_Click);
             // 
             // picImagem
             // 
@@ -310,6 +312,7 @@ namespace ProjetoAgenciaTI11T.View
             this.button1.TabIndex = 19;
             this.button1.Text = "Deletar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateIda
             // 
@@ -327,6 +330,7 @@ namespace ProjetoAgenciaTI11T.View
             this.btnCadastrar.TabIndex = 18;
             this.btnCadastrar.Text = "Alterar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // lblValor
             // 
@@ -392,6 +396,10 @@ namespace ProjetoAgenciaTI11T.View
             this.label1.TabIndex = 3;
             this.label1.Text = "Pesquisar Pacotes";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // TelaPrincipalPacotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -419,8 +427,8 @@ namespace ProjetoAgenciaTI11T.View
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox tbxNomePac;
+        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnBuscaCodPac;
         private System.Windows.Forms.Label label6;
@@ -450,5 +458,6 @@ namespace ProjetoAgenciaTI11T.View
         private System.Windows.Forms.Label lblDataVolta;
         private System.Windows.Forms.Button btnImagem;
         private System.Windows.Forms.PictureBox picImagem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
