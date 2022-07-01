@@ -72,5 +72,16 @@ namespace ProjetoAgenciaTI11T.View
             TelaPrincipalPacotes telaPrincipalPacotes = new TelaPrincipalPacotes();
             telaPrincipalPacotes.ShowDialog();
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaCadastarVendas telaCadastarVendas = new TelaCadastarVendas();
+            telaCadastarVendas.ShowDialog();
+        }
     }
 }
